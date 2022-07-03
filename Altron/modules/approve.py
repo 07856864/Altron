@@ -1,6 +1,6 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import BadRequest
-from telegram.ext import CallbackQueryHandler, run_async
+from telegram.ext import CallbackContext, CallbackQueryHandler, run_async
 
 import Altron.modules.sql.approve_sql as sql
 from Altron import DRAGONS, dispatcher
