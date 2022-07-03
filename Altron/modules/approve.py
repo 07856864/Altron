@@ -75,7 +75,7 @@ def disapprove(update, context):
         return ""
     sql.disapprove(message.chat_id, user_id)
     message.reply_text(
-        f"❌ 𝐔ɴ-𝐀ᴘᴘʀᴏᴠᴇᴅ ᴜsᴇʀ ɪɴ **{chat_title}**\n𝐔sᴇʀ: {member.user['first_name']}"
+        f"❌ 𝐔ɴ-𝐀ᴘᴘʀᴏᴠᴇᴅ ᴜsᴇʀ ɪɴ {chat_title}\n𝐔sᴇʀ: {member.user['first_name']}"
     )
     return
 
@@ -122,7 +122,7 @@ def approval(update, context):
 
 
 @run_async
-def unapproveall(update: Update):
+def unapproveall(update: Update, context: CallbackContext):
     chat = update.effective_chat
     user = update.effective_user
     member = chat.get_member(user.id)
@@ -151,7 +151,7 @@ def unapproveall(update: Update):
 
 
 @run_async
-def unapproveall_btn(update: Update):
+def unapproveall_btn(update: Update, context: CallbackContext):
     query = update.callback_query
     chat = update.effective_chat
     message = update.effective_message
